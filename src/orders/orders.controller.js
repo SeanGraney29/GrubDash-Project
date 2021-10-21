@@ -4,7 +4,7 @@ const orders = require(path.resolve("src/data/orders-data"));
 const nextId = require("../utils/nextId");
 
 
-//////////VERBS///////
+//////////HANDLERS///////
 function list(req, res) {res.json({ data: orders })};
 function read(req, res) {res.json({ data: res.locals.order })};
 
