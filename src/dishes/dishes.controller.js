@@ -56,7 +56,9 @@ function routeMatch(req, res, next) {
 		res.locals.dishId = dishId;
 		next();
 	}
-	next({ status: 400, message: `Dish id must match route id. Dish: ${id}, Route: ${dishId}` });
+	next({ 
+		status: 400, 
+		message: `Dish id must match route id. Dish: ${id}, Route: ${dishId}` });
 }
 
 ////EXPORTS/////////
