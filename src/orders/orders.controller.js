@@ -26,8 +26,8 @@ function destroy(req, res, next) {
   (res.locals.order.status === "pending") ?
 	(orders.splice(index, 1), res.sendStatus(204)) :
   next({
-			status: 400,
-			message: "An order cannot be deleted unless it is pending",
+	  status: 400,
+	  message: "An order cannot be deleted unless it is pending",
 		})
 }
 
@@ -43,7 +43,7 @@ function orderIsRight(req, res, next) {
 		next({
 			status: 400,
 			message: `Order must have ${detail}`,
-        })}
+		})}
       for(let i = 0; i < dishes.length; i++) {
         let dq = dishes[i].quantity
 			if(dq <= 0 || !Number.isInteger(dq))
@@ -77,10 +77,9 @@ function checkStatus(req, res, next) {
     (status === "delivered") ? "A delivered order cannot be changed" : '';
 	if(message) {
       next({
-			status: 400,
-			message,
-		});
-	}
+	      status: 400,
+	      message,
+		})}
 	next();
 }
 
